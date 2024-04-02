@@ -1,0 +1,9 @@
+.navLink {
+  text-decoration: none;
+  margin: 0 var(--mantine-spacing-lg);
+  color: var(--mantine-color-blue-9);
+}
+
+.activeNavLink {
+  color: var(--mantine-color-red-5);
+}

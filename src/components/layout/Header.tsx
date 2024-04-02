@@ -1,6 +1,6 @@
 import { ActionIcon, Burger, Group, Text, useMantineColorScheme } from '@mantine/core';
-import SVGMoon from '../assets/SVGMoon';
-import SVGsun from '../assets/SVGSun';
+import SVGMoon from '../../assets/SVGMoon';
+import SVGsun from '../../assets/SVGSun';
 import NavButtons from './NavButtons';
 
 interface HeaderProps {

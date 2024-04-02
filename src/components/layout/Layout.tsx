@@ -1,8 +1,9 @@
 import { useDisclosure } from '@mantine/hooks';
-import { AppShell } from '@mantine/core';
+import { AppShell, Center, Stack } from '@mantine/core';
 import Header from './Header';
 import NavButtons from './NavButtons';
 import Footer from './Footer';
+import { Outlet } from 'react-router-dom';
 
 function Layout() {
   const [opened, { toggle }] = useDisclosure();
@@ -21,12 +22,15 @@ function Layout() {
       </AppShell.Header>
 
       <AppShell.Navbar py='md' px={4}>
-        <NavButtons />
+        <Center>
+          <Stack>
+            <NavButtons />
+          </Stack>
+        </Center>
       </AppShell.Navbar>
 
       <AppShell.Main>
-        Navbar is only visible on mobile, links that are rendered in the header on desktop are
-        hidden on mobile in header and rendered in navbar instead.
+        <Outlet />
       </AppShell.Main>
 
       <AppShell.Footer>
