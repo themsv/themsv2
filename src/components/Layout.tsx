@@ -2,6 +2,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { AppShell } from '@mantine/core';
 import Header from './Header';
 import NavButtons from './NavButtons';
+import Footer from './Footer';
 
 function Layout() {
   const [opened, { toggle }] = useDisclosure();
@@ -12,7 +13,7 @@ function Layout() {
       navbar={{
         width: 300,
         breakpoint: 'sm',
-        collapsed: { desktop: true, mobile: !opened }
+        collapsed: { desktop: true, mobile: opened }
       }}
       padding='md'>
       <AppShell.Header>
@@ -27,6 +28,10 @@ function Layout() {
         Navbar is only visible on mobile, links that are rendered in the header on desktop are
         hidden on mobile in header and rendered in navbar instead.
       </AppShell.Main>
+
+      <AppShell.Footer>
+        <Footer />
+      </AppShell.Footer>
     </AppShell>
   );
 }
