@@ -1,12 +1,19 @@
-import { useDisclosure } from '@mantine/hooks';
-import { AppShell, Center, Stack } from '@mantine/core';
+import { Outlet } from 'react-router-dom';
+import { useDisclosure, useMediaQuery } from '@mantine/hooks';
+import { AppShell, Box, Center, Stack, useMantineTheme } from '@mantine/core';
+
 import Header from './Header';
 import NavButtons from './NavButtons';
 import Footer from './Footer';
-import { Outlet } from 'react-router-dom';
+
+import styles from './Layout.module.css';
 
 function Layout() {
   const [opened, { toggle }] = useDisclosure();
+
+  const theme = useMantineTheme();
+
+  const isMobile = useMediaQuery(`(max-width:${theme.breakpoints.sm} )`);
 
   return (
     <AppShell
@@ -29,7 +36,7 @@ function Layout() {
         </Center>
       </AppShell.Navbar>
 
-      <AppShell.Main>
+      <AppShell.Main className={isMobile ? '' : styles.centerMain}>
         <Outlet />
       </AppShell.Main>
 
