@@ -6,7 +6,7 @@ function SVGsun() {
       width={32}
       height={32}
       viewBox='0 0 24 24'
-      strokeWidth={2}
+      strokeWidth={1}
       stroke='#F28C38'
       fill='#F28C38'
       strokeLinecap='round'

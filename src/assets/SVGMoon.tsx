@@ -6,9 +6,9 @@ function SVGMoon() {
       width={32}
       height={32}
       viewBox='0 0 24 24'
-      strokeWidth={2}
-      stroke='#F5F3CE'
-      fill='#F5F3CE'
+      strokeWidth={1}
+      stroke='#000'
+      fill='#fff'
       strokeLinecap='round'
       strokeLinejoin='round'>
       <path stroke='none' d='M0 0h24v24H0z' fill='none' />
