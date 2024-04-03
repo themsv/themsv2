@@ -21,5 +21,4 @@ function SVGLinkedIn() {
   );
 }
 
-
-export default SVGLinkedIn
+export default SVGLinkedIn;

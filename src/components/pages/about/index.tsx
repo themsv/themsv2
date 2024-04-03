@@ -9,7 +9,7 @@ import {
   Divider,
   List,
   ActionIcon,
-  ActionIconProps,
+  ActionIconProps
 } from '@mantine/core';
 import styles from './about.module.css';
 import SVGLinkedIn from '../../../assets/SVGLinkedIn';
