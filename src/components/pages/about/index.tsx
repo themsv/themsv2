@@ -1,32 +1,60 @@
-import { Group, Text, Image, Stack, Box, Title, Divider, List } from '@mantine/core';
+import { ReactNode } from 'react';
+import {
+  Group,
+  Text,
+  Image,
+  Stack,
+  Box,
+  Title,
+  Divider,
+  List,
+  ActionIcon,
+  ActionIconProps
+} from '@mantine/core';
 import styles from './about.module.css';
 import SVGLinkedIn from '../../../assets/SVGLinkedIn';
 import SVGInstagram from '../../../assets/SVGInstagram';
 import SVGGithub from '../../../assets/SVGGithub';
+import image from '../../../assets/saivenkat_photo.jpg';
+import SVGMail from '../../../assets/SVGMail';
+import SVGTwitter from '../../../assets/SVGTwitter';
 
 function About() {
   return (
     <Box className={styles.container}>
-      <Stack gap='0' align='center' w='50%'>
+      <Stack gap='md' align='center' w='50%'>
         <Image
-          src='https://avatars.githubusercontent.com/u/53350865?v=4'
+          src={image}
           alt="Saivenkat's face did not load"
-          h={200}
-          w={200}
+          h={220}
           radius='50%'
           fallbackSrc='https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-9.png'
         />
 
-        <Text fw={500} size='xl'>
-          Saivenkat Mahendrakar
-        </Text>
-        <Text>Software Engineer</Text>
-        <Text>Wissen Technology</Text>
-        <Group>
-          <SVGLinkedIn />
-          <SVGInstagram />
-          <SVGGithub />
-        </Group>
+        <Stack gap='0' align='center'>
+          <Title order={3} c='pink'>
+            Saivenkat Mahendrakar
+          </Title>
+          <Text>Software Engineer</Text>
+          <Text>Wissen Technology</Text>
+          <Group>
+            <CustomActionIcon href='https://www.linkedin.com/in/themsv'>
+              <SVGLinkedIn />
+            </CustomActionIcon>
+            <CustomActionIcon href='https://www.instagram.com/themsv/' color='pink'>
+              <SVGInstagram />
+            </CustomActionIcon>
+            <CustomActionIcon href='https://twitter.com/themsv7'>
+              <SVGTwitter />
+            </CustomActionIcon>
+            <CustomActionIcon href='https://github.com/themsv' color='gray'>
+              <SVGGithub />
+            </CustomActionIcon>
+            <CustomActionIcon href='mailto:saivenkat108@gmail.com'>
+              <SVGMail />
+            </CustomActionIcon>
+          </Group>
+        </Stack>
       </Stack>
 
       <Box>
@@ -72,3 +100,17 @@ function About() {
 }
 
 export default About;
+
+interface CustomActionIconProps extends ActionIconProps {
+  children: ReactNode;
+  href: string;
+}
+
+function CustomActionIcon(props: CustomActionIconProps) {
+  const { children, ...rest } = props;
+  return (
+    <ActionIcon variant='transparent' component='a' target='_blank' size='lg' {...rest}>
+      {children}
+    </ActionIcon>
+  );
+}
