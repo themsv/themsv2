@@ -1,4 +1,4 @@
-import { MantineProvider, createTheme  } from '@mantine/core';
+import { MantineProvider, createTheme, virtualColor } from '@mantine/core';
 import Layout from './components/layout/Layout';
 import '@mantine/core/styles.css';
 import { Route, Routes } from 'react-router-dom';
@@ -8,7 +8,13 @@ import Home from './components/pages/home';
 
 const theme = createTheme({
   fontFamily: 'Nunito Sans',
-  
+  colors: {
+    primary: virtualColor({
+      name: 'primary',
+      dark: 'pink',
+      light: 'cyan'
+    })
+  }
 });
 
 function App() {

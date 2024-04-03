@@ -9,7 +9,7 @@ import {
   Divider,
   List,
   ActionIcon,
-  ActionIconProps
+  ActionIconProps,
 } from '@mantine/core';
 import styles from './about.module.css';
 import SVGLinkedIn from '../../../assets/SVGLinkedIn';
@@ -32,9 +32,13 @@ function About() {
         />
 
         <Stack gap='0' align='center'>
-          <Title order={3} c='pink'>
+          <Text
+            size='xl'
+            fw={800}
+            variant='gradient'
+            gradient={{ from: 'lime', to: 'blue', deg: 90 }}>
             Saivenkat Mahendrakar
-          </Title>
+          </Text>
           <Text>Software Engineer</Text>
           <Text>Wissen Technology</Text>
           <Group>
