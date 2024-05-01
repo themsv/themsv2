@@ -3,4 +3,8 @@
   align-items: center;
   margin: 3rem 0;
   gap: 3rem;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    flex-direction: column;
+  }
 }

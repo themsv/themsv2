@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { useDisclosure, useMediaQuery } from '@mantine/hooks';
-import { AppShell, Box, Center, Stack, useMantineTheme } from '@mantine/core';
+import { AppShell, Center, Stack, useMantineTheme } from '@mantine/core';
 
 import Header from './Header';
 import NavButtons from './NavButtons';
